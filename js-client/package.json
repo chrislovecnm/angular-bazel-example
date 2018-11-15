@@ -31,12 +31,12 @@
         "typescript": "3.1.1"
     },
     "scripts": {
-        "build": "bazel build //src:bundle",
-        "serve": "ibazel run //src:devserver",
-        "serve-prod": "bazel run //src:prodserver",
-        "e2e": "bazel test //e2e:all",
-        "test": "bazel test //src/...",
-        "postinstall": "ngc -p postinstall.tsconfig.json",
+        "build": "bazel build //js-client/src:bundle",
+        "serve": "ibazel run //js-client/src:devserver",
+        "serve-prod": "bazel run //js-client/src:prodserver",
+        "e2e": "bazel test //js-client/e2e:all",
+        "test": "bazel test //js-client/src/...",
+        "postinstall": "ngc -p js-client/postinstall.tsconfig.json",
         "prebuildifier": "bazel build @com_github_bazelbuild_buildtools//buildifier",
         "//": "note: working around https://github.com/alexeagle/angular-bazel-example/issues/60",
         "buildifier": "find . -type f \\( -name BUILD -or -name BUILD.bazel \\) ! -path \"./node_modules/*\" | xargs $(bazel info bazel-bin)/external/com_github_bazelbuild_buildtools/buildifier/*/buildifier",

@@ -55,7 +55,7 @@ http_archive(
 # In the future this will no longer be needed.
 local_repository(
     name = "ignore_node_modules_rxjs",
-    path = "node_modules/rxjs/src",
+    path = "js-client/node_modules/rxjs/src",
 )
 
 ####################################
@@ -76,9 +76,9 @@ node_repositories(
 
 yarn_install(
     name = "npm",
-    package_json = "//:package.json",
-    yarn_lock = "//:yarn.lock",
-    data = ["//:postinstall.tsconfig.json"],
+    package_json = "//js-client:package.json",
+    yarn_lock = "//js-client:yarn.lock",
+    data = ["//js-client:postinstall.tsconfig.json"],
 )
 
 load("@io_bazel_rules_go//go:def.bzl", "go_rules_dependencies", "go_register_toolchains")

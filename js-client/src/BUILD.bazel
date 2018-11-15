@@ -17,9 +17,9 @@ ng_module(
     ],
     tsconfig = ":tsconfig.json",
     deps = [
-        "//src/hello-world",
-        "//src/material",
-        "//src/todos",
+        "//js-client/src/hello-world",
+        "//js-client/src/material",
+        "//js-client/src/todos",
         "@angular//packages/core",
         "@angular//packages/router",
         "@npm//@ngrx/store",
@@ -56,7 +56,7 @@ ts_devserver(
         "index.html",
     ],
     # Tell Bazel to build the sources first
-    deps = ["//src"],
+    deps = ["//js-client/src"],
 )
 
 load("@build_bazel_rules_nodejs//:defs.bzl", "nodejs_binary", "rollup_bundle")
@@ -69,12 +69,12 @@ rollup_bundle(
     # In the future, we could automatically gather these from statically
     # analyzing the Angular sources.
     additional_entry_points = [
-        "src/hello-world/hello-world.module.ngfactory",
-        "src/todos/todos.module.ngfactory",
+        "js-client/src/hello-world/hello-world.module.ngfactory",
+        "js-client/src/todos/todos.module.ngfactory",
     ],
-    entry_point = "src/main",
+    entry_point = "js-client/src/main",
     deps = [
-        "//src",
+        "//js-client/src",
         "@npm//@ngrx/store",
     ],
 )

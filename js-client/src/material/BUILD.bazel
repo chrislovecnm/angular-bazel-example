@@ -5,7 +5,7 @@ load("@angular//:index.bzl", "ng_module")
 ng_module(
     name = "material",
     srcs = glob(["*.ts"]),
-    tsconfig = "//src:tsconfig.json",
+    tsconfig = "//js-client/src:tsconfig.json",
     deps = [
         "@angular//packages/core",
         "@angular_material//src/lib:material",

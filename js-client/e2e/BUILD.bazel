@@ -4,8 +4,8 @@ load("@angular//:index.bzl", "protractor_web_test_suite")
 ts_library(
     name = "e2e",
     testonly = 1,
-    srcs = glob(["src/*.ts"]),
-    tsconfig = "//src:tsconfig-test",
+    srcs = glob(["js-client/src/*.ts"]),
+    tsconfig = "//js-client/src:tsconfig-test",
     deps = [
         "@npm//@types/jasmine",
         "@npm//jasmine",
@@ -23,7 +23,7 @@ protractor_web_test_suite(
         "@npm//zone.js",
     ],
     on_prepare = ":protractor.on-prepare.js",
-    server = "//src:prodserver",
+    server = "//js-client/src:prodserver",
     deps = [":e2e"],
 )
 
@@ -37,6 +37,6 @@ protractor_web_test_suite(
         "@npm//zone.js",
     ],
     on_prepare = ":protractor.on-prepare.js",
-    server = "//src:devserver",
+    server = "//js-client/src:devserver",
     deps = [":e2e"],
 )
