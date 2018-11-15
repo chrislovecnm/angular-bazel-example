@@ -23,11 +23,11 @@
         "types": []
     },
     "include": [
-        "js-client/node_modules/@ngrx/**/*"
+        "node_modules/@ngrx/**/*"
     ],
     "exclude": [
-        "js-client/node_modules/@ngrx/store/migrations/**",
-        "js-client/node_modules/@ngrx/store/schematics/**",
-        "js-client/node_modules/@ngrx/store/schematics-core/**"
+        "node_modules/@ngrx/store/migrations/**",
+        "node_modules/@ngrx/store/schematics/**",
+        "node_modules/@ngrx/store/schematics-core/**"
     ]
 }

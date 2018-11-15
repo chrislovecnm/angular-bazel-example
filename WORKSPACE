@@ -55,7 +55,7 @@ http_archive(
 # In the future this will no longer be needed.
 local_repository(
     name = "ignore_node_modules_rxjs",
-    path = "js-client/node_modules/rxjs/src",
+    path = "node_modules/rxjs/src",
 )
 
 ####################################
